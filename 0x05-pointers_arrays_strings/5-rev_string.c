@@ -4,12 +4,12 @@ void rev_string(char *s) {
     int len = 0, index = 0;
     char temp;
 
-    // Calculate the length of the string
+    /* Calculate the length of the string */
     while (s[len] != '\0') {
         len++;
     }
 
-    // Reverse the string
+    /* Reverse the string */
     for (index = 0; index < len / 2; index++) {
         temp = s[index];
         s[index] = s[len - index - 1];
