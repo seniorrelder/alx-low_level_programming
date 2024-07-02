@@ -1,10 +1,17 @@
-#include <stddef.h>
+/**
+ * _strlen - Returns the length of a string.
+ * @s: The string to calculate the length of.
+ * 
+ * Return: The length of the string.
+ */
+int _strlen(char *s)
+{
+    int length = 0;
 
-size_t size_t_strlen(const char *str) {
-    size_t length = 0; // Corrected the missing semicolon
-    while (*str++) { // This should be correctly recognized now
+    while (s[length] != '\0')
+    {
         length++;
     }
-    return length; // Ensure the function returns a value
-}
 
+    return length;
+}
