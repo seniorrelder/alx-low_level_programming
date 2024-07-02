@@ -1,32 +1,21 @@
-#include <stdio.h>
-
-void rev_string(char *s) {
-    int len = 0, index = 0;
+/**
+ * rev_string - Reverses a string.
+ * @s: The string to be reversed.
+ */
+void rev_string(char *s)
+{
+    int i, length;
     char temp;
 
-    /* Calculate the length of the string */
-    while (s[len] != '\0') {
-        len++;
+    /* First, find the length of the string */
+    for (length = 0; s[length] != '\0'; length++)
+        ;
+
+    /* Then, swap characters from the start of the string with those at the end */
+    for (i = 0; i < length / 2; i++)
+    {
+        temp = s[i];
+        s[i] = s[length - i - 1];
+        s[length - i - 1] = temp;
     }
-
-    /* Reverse the string */
-    for (index = 0; index < len / 2; index++) {
-        temp = s[index];
-        s[index] = s[len - index - 1];
-        s[len - index - 1] = temp;
-    }
-}
-
-/**
- * main - check the code.
- *
- * Return: Always 0.
- */
-int main(void) {
-    char s[11] = "Holberton!";
-
-    printf("%s\n", s);
-    rev_string(s);
-    printf("%s\n", s);
-    return (0);
 }
