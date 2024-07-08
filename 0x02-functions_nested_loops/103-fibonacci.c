@@ -7,23 +7,15 @@
  */
 int main(void)
 {
-    long int sum = 0;
-    long int t1 = 1, t2 = 2, nextTerm = t1 + t2;
-
-    // t2 is the first even-valued term
-    sum += t2;
-
-    while (nextTerm <= 4000000)
+    long int i, t1 = 1, t2 = 2, nextTerm;
+    printf("%ld, %ld", t1, t2);
+    for (i = 3; i <= 50; i++)
     {
-        if (nextTerm % 2 == 0)
-        {
-            sum += nextTerm;
-        }
+        nextTerm = t1 + t2;
+        printf(", %ld", nextTerm);
         t1 = t2;
         t2 = nextTerm;
-        nextTerm = t1 + t2;
     }
-
-    printf("%ld\n", sum);
+    printf("\n");
     return 0;
 }
