@@ -9,7 +9,8 @@ int main(void)
 {
     int count = 98;
     unsigned long a = 0, b = 1, next = 0;
-    for (int i = 1; i <= count; i++)
+    int i;
+    for (i = 1; i <= count; i++)
     {
         next = a + b;
         printf("%lu", next);
